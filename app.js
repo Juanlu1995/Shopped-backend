@@ -6,6 +6,8 @@ const createError = require('http-errors');
 //Import the mongoose module
 const mongoose = require('mongoose');
 
+const cors = require('cors');
+
 require('dotenv').config();
 
 //Mongo connect
@@ -29,6 +31,7 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 
 app.use(express.json()); // support json encoded bodies
