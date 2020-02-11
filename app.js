@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const createError = require('http-errors');
 //Import the mongoose module
 const mongoose = require('mongoose');
+const passport = require('passport');
+const session = require("express-session");
 
 const cors = require('cors');
 
@@ -38,6 +40,15 @@ app.use(express.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.use(cookieParser());
+
+app.use(session({
+    secret: 'secrect',
+    resave: false,
+    saveUnitialize: false
+}));
+
+app.use(passport.initialize);
+app.use(passport.session());
 
 app.use('/', indexRouter);
 

@@ -19,6 +19,9 @@
     "http-errors": "latest",
     "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "moment": "^2.24.0",
+    "bcrypt": "^3.0.8",
+    "jwt-simple": "^0.5.6"
   }
 }
